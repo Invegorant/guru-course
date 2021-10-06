@@ -78,7 +78,7 @@ public class PracticeFormPage
 
     public PracticeFormPage uploadFile()
     {
-        uploadFile.uploadFile(new File("src/test/resources/img/n7_pictures.png"));
+        uploadFile.uploadFile(new File("src/test/resources/img/n7_pictures.jpeg"));
         return this;
     }
 
@@ -128,7 +128,7 @@ public class PracticeFormPage
         put("Date of Birth", "26 May,1998");
         put("Subjects", PracticeFormData.subject);
         put("Hobbies", PracticeFormData.sportHobby + ", " + PracticeFormData.readingHobby + ", " + PracticeFormData.musicHobby);
-        put("Picture", "n7_pictures.png");
+        put("Picture", "n7_pictures.jpeg");
         put("Address", PracticeFormData.currentAddress);
         put("State and City", PracticeFormData.state + " " + PracticeFormData.city);
     }};

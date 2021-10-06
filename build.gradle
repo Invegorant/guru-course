@@ -37,3 +37,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task PFTTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'PFT'
+    }
+}
