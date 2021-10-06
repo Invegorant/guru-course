@@ -1,14 +1,17 @@
 package ru.guru.tests;
 
+import ru.config.Attach;
 import ru.config.TestBase;
 import ru.guru.data.PracticeFormData;
 import ru.guru.pages.PracticeFormPage;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 import static io.qameta.allure.Allure.step;
 
 @Tag("PFT")
@@ -22,6 +25,17 @@ public class PracticeFormTests extends TestBase
     {
         step("Open Practice Form page", () -> {
             open("https://demoqa.com/automation-practice-form");
+        });
+    }
+
+    @AfterAll
+    public static void afterAll()
+    {
+        step("Get all attachments after test", () -> {
+            Attach.screenshotAs("Last screenshot");
+            Attach.pageSource();
+            Attach.browserConsoleLogs();
+            Attach.addVideo();
         });
     }
 
